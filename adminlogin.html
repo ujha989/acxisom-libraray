@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #e3f2fd; /* Light blue background */
+            font-family: 'Roboto', sans-serif;
+        }
+        .signup-form {
+            width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff; /* White background for the form */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .signup-form h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-control {
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .btn {
+            background: #007bff; /* Primary color */
+            border: none;
+            border-radius: 25px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+        .signup-form a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .signup-form a:hover {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        .alert {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% include "library/navbar.html" %}
+    <br>
+    <center>
+        <h3 class='alert alert-success'>Login As Admin!</h3>
+    </center>
+    <div class="signup-form">
+        <form method="post" class="form-horizontal">
+            <h2>Admin Login</h2>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label class="control-label col-xs-4">{{ field.label_tag }}</label>
+                    <div class="col-xs-8">
+                        {{ field }}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="form-group">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <button type="submit" class="btn btn-lg">Login</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-center">
+            <a href="adminsignup">Don't have an account? Signup here</a>
+        </div>
+    </div>
+    {% include "library/footer.html" %}
+</body>
+</html>

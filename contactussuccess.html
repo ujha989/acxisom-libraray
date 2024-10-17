@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>Library</title>
+    <style>
+        .jumbotron {
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            color: #fff;
+            margin-bottom: 0px;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .jumbotron:hover {
+            transform: scale(1.02);
+        }
+        .jumbotron h1 {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .jumbotron p {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .btn-custom {
+            background-color: #ff6f61;
+            color: #fff;
+            border-radius: 20px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #ff4a3a;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    {% include "library/navbar.html" %}
+    <br><br>
+    <div class="jumbotron">
+        <h1 class="display-4">Your message was sent successfully!</h1>
+        <p class="lead">We will respond to your feedback soon.</p>
+        <hr class="my-4">
+        <p>Check out other features of the website!</p>
+        <p class="lead">
+            <a class="btn btn-custom btn-lg" href="/" role="button">HOME</a>
+        </p>
+    </div>
+
+    {% include "library/footer.html" %}
+</body>
+</html>

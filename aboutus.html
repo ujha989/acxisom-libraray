@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Library Management System</title>
+    <style media="screen">
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+        }
+        .jumbotron {
+            margin-top: 0;
+            margin-bottom: 0;
+            background: linear-gradient(135deg, #f8f9fa, #e2e6ea);
+            transition: background 0.5s;
+            border-radius: 15px; /* Rounded corners */
+            padding: 30px;
+        }
+        .jumbotron:hover {
+            background: #d1e7dd; /* Light green on hover */
+        }
+        .jumbotron h1 {
+            text-align: center;
+            transition: transform 0.3s;
+            font-weight: bold;
+            color: #007bff; /* Blue text */
+        }
+        .jumbotron:hover h1 {
+            transform: scale(1.1);
+        }
+        .lead {
+            font-size: 1.25rem; /* Larger font for the lead paragraph */
+        }
+        .btn {
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary {
+            background-color: #007bff; /* Primary button color */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+        .btn-info {
+            background-color: #17a2b8; /* Info button color */
+            border: none;
+        }
+        .btn-info:hover {
+            background-color: #138496; /* Darker teal on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    {% include "library/navbar.html" %}
+    <br><br>
+    <center><h3 class='alert alert-success'>About Us!</h3></center>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the Library!</h1>
+        <p class="lead">A service dedicated to Admin and Student of college. We provide online resources, professional support, and guidance to all our students whenever, and from wherever they have chosen to study.</p>
+        <hr class="my-4">
+        <p>Explore our Website.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+            <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#infoModal">More Info</button>
+        </p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Additional Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Here you can add more detailed information about the library services, available resources, and how to access them.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "library/footer.html" %}
+</body>
+</html>

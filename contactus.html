@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>Library Feedback</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #fce4ec);
+            font-family: Arial, sans-serif;
+        }
+        .alert {
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .feedback-form {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .feedback-form:hover {
+            transform: scale(1.02);
+        }
+        .btn-custom {
+            background-color: #ff4081;
+            color: #fff;
+            border-radius: 20px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #ff1e6c;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    {% include "library/navbar.html" %}
+    <br><br>
+
+    <div class="container">
+        <div class="text-center">
+            <h3 class='alert alert-success'>Send Us Your Valuable Feedback!</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 feedback-form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <h4>{{ form.as_p }}</h4>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" value="Send Message" class='btn btn-custom btn-lg'>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% include "library/footer.html" %}
+</body>
+</html>

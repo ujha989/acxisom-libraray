@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Issued Books</title>
+    <style>
+        /* Existing styles... */
+
+        .btn-danger {
+            background-color: #dc3545; /* Red background */
+            color: white; /* White text */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Padding for better size */
+            font-size: 16px; /* Font size */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+            transform: scale(1.05); /* Slightly larger on hover */
+        }
+
+        .btn-danger:focus {
+            outline: none; /* Remove default outline */
+        }
+    </style>
+</head>
+<body>
+    <!-- Other content... -->
+
+    <button 
+        class="btn btn-danger" 
+        onclick="if(confirm('Are you sure you want to return this book?')) { location.href='{% url returnbook t.4 %}'; }" 
+        type="button">
+        Return
+    </button>
+
+    <!-- Other content... -->
+</body>
+</html>

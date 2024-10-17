@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            background-color: #d1f2eb; /* Light teal background */
+        }
+        .navbar-brand {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: #2980b9; /* Custom blue color */
+        }
+        .jumbotron {
+            margin-bottom: 0px;
+            background-color: #ffccbc; /* Light coral */
+            border-radius: 15px;
+            padding: 30px;
+            transition: background 0.5s;
+        }
+        .jumbotron:hover {
+            background-color: #ffab91; /* Darker coral on hover */
+        }
+        .carousel-item img {
+            border-radius: 15px; /* Rounded corners for images */
+        }
+        .btn-primary {
+            background-color: #ff7043; /* Bright orange */
+            border: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #e64a19; /* Darker orange on hover */
+            transform: scale(1.05); /* Slightly larger on hover */
+        }
+        h1 {
+            color: #c0392b; /* Dark red for headings */
+        }
+        p.lead {
+            color: #34495e; /* Dark gray for text */
+        }
+    </style>
+</head>
+<body>
+
+    {% include "library/navbar.html" %}
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" height="500px" src="{% static 'images/lib2.jpeg' %}" alt="First slide">
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Hello, Reader!</h1>
+        <p class="lead text-center">Welcome to our library management system! We are dedicated to providing exceptional service to both Admins and Students. 
+          Our platform offers a wealth of online resources, professional support, and comprehensive guidance. 
+          No matter where you are, we ensure that you have the tools and assistance you need to thrive in your studies.</p>
+        <hr class="my-4">
+
+        <div class="row text-center">
+            <div class="col-lg-6">
+                <a class="btn btn-primary btn-lg" href="/adminclick" role="button">Admin</a>
+            </div>
+
+            <div class="col-lg-6">
+                <a class="btn btn-primary btn-lg" href="/studentclick" role="button">Student</a>
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+
+    {% include "library/footer.html" %}
+
+</body>
+</html>

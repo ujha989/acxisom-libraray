@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            font-family: 'Roboto', sans-serif;
+        }
+        .jumbotron {
+            background-color: #007bff; /* Primary color */
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .jumbotron h1 {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .jumbotron p {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .btn {
+            border-radius: 25px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    {% include "library/navbar.html" %}
+    <br><br>
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, Admin</h1>
+        <p class="lead">Welcome to the Online Library Management System.</p>
+        <hr class="my-4">
+        <p>You can access various features after logging in.</p>
+        <p class="lead">
+            <a class="btn btn-light btn-lg" href="adminlogin" role="button">Login</a>
+        </p>
+    </div>
+    {% include "library/footer.html" %}
+</body>
+</html>

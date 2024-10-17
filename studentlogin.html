@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-control {
+            border-color: #ddd;
+            min-height: 41px;
+            box-shadow: none !important;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .form-control, .btn {
+            border-radius: 25px;
+        }
+        .signup-form {
+            width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .signup-form h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            background: #007bff;
+            border: none;
+            margin-top: 20px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .signup-form .btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+        .signup-form a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .signup-form a:hover {
+            text-decoration: none;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    {% include "library/navbar.html" %}
+    <br>
+    <center>
+        <h3 class='alert alert-success'>Login As Student!</h3>
+    </center>
+    <div class="signup-form">
+        <form method="post" class="form-horizontal">
+            <h2>Student Login</h2>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label class="control-label col-xs-4">{{ field.label_tag }}</label>
+                    <div class="col-xs-8">
+                        {{ field }}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="form-group">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-center">
+            Do not have an account? <a href="studentsignup">Signup here</a>
+        </div>
+    </div>
+</body>
+</html>
